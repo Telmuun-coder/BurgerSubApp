@@ -52,7 +52,8 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         token: null,
-        error: null,
+        loginError: null,
+        signupError: null,
         userId: null,
       };
     default:

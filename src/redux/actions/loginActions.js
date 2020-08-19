@@ -17,7 +17,9 @@ export const loginUser = (email, password) => {
         const token = res.data.idToken;
         const userId = res.data.localId;
         const expiresIn = res.data.expiresIn;
-        const expiresDate = new Date().getTime() + expiresIn;
+        const expiresDate = new Date(
+          new Date().getTime() + parseInt(expiresIn * 1000)
+        );
         const refreshToken = res.data.refreshToken;
         // console.log("Loot at me sexy boy!", res.data);
         localStorage.setItem("token", token);
@@ -25,7 +27,7 @@ export const loginUser = (email, password) => {
         localStorage.setItem("expiresDate", expiresDate);
         localStorage.setItem("refreshToken", refreshToken);
         dispatch(loginUserSuccess(token, userId));
-        dispatch(autoLogout(expiresIn * 4000));
+        dispatch(autoLogout(expiresIn * 1000));
       })
       .catch((e) => dispatch(loginUserError(e)));
   };

@@ -21,8 +21,9 @@ class App extends React.Component {
     const token = localStorage.getItem("token");
     const userId = localStorage.getItem("userId");
     const expiresDate = new Date(localStorage.getItem("expiresDate"));
+    const now = new Date();
     if (token) {
-      if (expiresDate > new Date()) {
+      if (expiresDate > now) {
         //tokenii hugatsaa duusagui
         this.props.autoLogin(token, userId);
         //tokenii hugatsaa duusah hugatsaag tootsooj autlogout action duudaj baina
@@ -73,7 +74,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     autoLogin: (token, userId) => dispatch(loginUserSuccess(token, userId)),
     logout: () => dispatch(actions.logout()),
-    autoLogout: (ms) => dispatch(actions.autoLogout()),
+    autoLogout: (ms) => dispatch(actions.autoLogout(ms)),
   };
 };
 
