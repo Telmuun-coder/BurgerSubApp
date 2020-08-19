@@ -72,7 +72,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     autoLogin: (token, userId) => dispatch(loginUserSuccess(token, userId)),
-    login: () => dispatch(actions.logout()),
+    logout: () => dispatch(actions.logout()),
     autoLogout: (ms) => dispatch(actions.autoLogout()),
   };
 };
