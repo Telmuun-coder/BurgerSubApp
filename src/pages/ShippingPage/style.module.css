@@ -1,0 +1,13 @@
+.Ship {
+  width: 80%;
+  /* background-color: blueviolet; */
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 2px 3px black;
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .Ship {
+    width: 700px;
+  }
+}

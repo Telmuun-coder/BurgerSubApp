@@ -1,0 +1,29 @@
+.Toolbar {
+  height: 56px;
+  width: 100%;
+  background-color: #730b09;
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  padding-right: 0px;
+  box-sizing: border-box;
+  z-index: 90;
+  font-size: 20px;
+  color: white;
+}
+
+@media (min-width: 500px) {
+  .HideHan {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .HideOnMobile {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+.Sidebar {
+  background-color: white;
+  z-index: 200;
+  width: 70%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  transition: all 0.3s ease-in;
+}
+.Open {
+  transform: translateX(0);
+}
+.Close {
+  transform: translateX(-100%);
+}
+.Logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
